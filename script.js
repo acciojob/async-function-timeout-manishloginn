@@ -1,4 +1,3 @@
-//your JS code here. If required.
 const textInput = document.getElementById("text")
 const delayInput = document.getElementById("delay")
 const button = document.getElementById("btn")
@@ -9,9 +8,13 @@ async function whensubmit() {
     const text = textInput.value;
     const delay = parseInt(delayInput.value)*1000;
 
+    if (!text || isNaN(delay)) {
+        alert("Please enter valid text and delay.")
+    }
+
     await new Promise (resolve=> setTimeout (resolve, delay));
 
-    outputInput.innerText = text
+    outputInput.textContent = text
     
 
 }
