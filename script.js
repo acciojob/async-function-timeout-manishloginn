@@ -10,6 +10,7 @@ async function whensubmit() {
 
     if (!text || isNaN(delay)) {
         alert("Please enter valid text and delay.")
+        return;
     }
 
     await new Promise (resolve=> setTimeout (resolve, delay));
